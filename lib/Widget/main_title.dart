@@ -12,7 +12,7 @@ class MainTitle extends StatelessWidget{
         CustomText(
             text: number,
             textsize: 20.0,
-            color: const Color(0xff61F9D5),
+            color: const Color(0xff413CFD),
             fontWeight: FontWeight.w700,
             letterSpacing: 3.0,),
           const SizedBox(

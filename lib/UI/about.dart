@@ -3,24 +3,27 @@ import 'package:my_portfolio/Widget/custom_text.dart';
 
 class About extends StatelessWidget {
   Widget technology(BuildContext context, String text) {
-    return Row(
-      children: [
-        Icon(
-          Icons.skip_next,
-          color: Color(0xff413C7D).withOpacity(0.6),
-          size: 14.0,
-        ),
-        SizedBox(
-          width: MediaQuery.of(context).size.width * 0.01,
-        ),
-        Text(
-          text,
-          style: TextStyle(
-            color: Color(0xff717C99),
-            letterSpacing: 1.75,
-          ),
-        )
-      ],
+    return Expanded(
+        flex: 1,
+        child: Row(
+          children: [
+            Icon(
+              Icons.skip_next,
+              color: Color(0xff413CFD).withOpacity(0.6),
+              size: 14.0,
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.01,
+            ),
+            Text(
+              text,
+              style: TextStyle(
+                color: Color(0xff717C99),
+                letterSpacing: 1.75,
+              ),
+            )
+          ],
+    ),
     );
   }
 
@@ -45,7 +48,7 @@ class About extends StatelessWidget {
                     CustomText(
                       text: "01.",
                       textsize: 20.0,
-                      color: Color(0xff413C7D),
+                      color: Color(0xff413CFD),
                       fontWeight: FontWeight.w700,
                       letterSpacing: 3.0,
                     ),

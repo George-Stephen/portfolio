@@ -36,7 +36,7 @@ class WorkBox extends StatelessWidget{
                 "Strathmore University",
             duration: "2021- Present"),
         CustomWorkData(
-            title: "Freelancer - Flutter/Android/Python mobile app developer | UI/UX Designer" ,
+            title: "Freelancer - Flutter/Android mobile app developer | UI/UX Designer" ,
             subTitle: "Android/Flutter developer and an experienced programmer who yearns to grow in the field of"
                 " Software Engineering with an extensive history of management and developing efficient solutions."
                 "I am skilled in Google's Flutter/Dart, Database management and Web development on a grand scale. If you are"

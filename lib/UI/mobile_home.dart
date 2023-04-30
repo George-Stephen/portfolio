@@ -1,11 +1,18 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_portfolio/UI/work_education.dart';
+import 'package:my_portfolio/Widget/MobileWorkBox.dart';
+import 'package:my_portfolio/Widget/app_bar.dart';
+import 'package:my_portfolio/Widget/custom_text.dart';
+import 'package:my_portfolio/Widget/main_title.dart';
 import 'package:my_portfolio/Widget/mobile_work.dart';
 import 'package:my_portfolio/models/contact_methods.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 
-import '../Widget/custom_text.dart';
 import '../Widget/mobile_project.dart';
+import 'about.dart';
 
 class MobileHome extends StatefulWidget {
   @override
@@ -18,7 +25,7 @@ class _MobileHomeState extends State<MobileHome> {
       children: [
         Icon(
           Icons.skip_next,
-          color: const Color(0xff64FFDA).withOpacity(0.6),
+          color: Color(0xff413CFD).withOpacity(0.6),
           size: 14.0,
         ),
         SizedBox(
@@ -26,7 +33,7 @@ class _MobileHomeState extends State<MobileHome> {
         ),
         Text(
           text,
-          style: const TextStyle(
+          style: TextStyle(
             color: Color(0xff717C99),
             letterSpacing: 1.75,
           ),
@@ -40,8 +47,8 @@ class _MobileHomeState extends State<MobileHome> {
     Method method = Method();
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: const Color(0xff0A192F),
-      endDrawer: const Drawer(
+      backgroundColor: Color(0xff3B394C),
+      endDrawer: Drawer(
           elevation: 6.0,
           child: Column(
             children: [
@@ -49,8 +56,8 @@ class _MobileHomeState extends State<MobileHome> {
                   currentAccountPicture: CircleAvatar(
                     child: Icon(Icons.person),
                   ),
-                  accountName: Text("Tushar Nikam"),
-                  accountEmail: Text("champ96k@gmail.com")),
+                  accountName: Text("George Stephen Wangui"),
+                  accountEmail: Text("georgesteve561@gmail.com")),
               ListTile(
                 title: Text("Share"),
                 leading: Icon(Icons.share),
@@ -65,13 +72,13 @@ class _MobileHomeState extends State<MobileHome> {
             ],
           )),
       appBar: AppBar(
-        backgroundColor: const Color(0xff0A192F),
+        backgroundColor: Color(0xff3B394C),
         elevation: 0.0,
         title: IconButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.change_history,
             size: 32.0,
-            color: Color(0xff64FFDA),
+            color: Color(0xff413CFD),
           ),
           onPressed: () {},
         ),
@@ -87,41 +94,39 @@ class _MobileHomeState extends State<MobileHome> {
                 height: size.height * 0.08,
               ),
               CustomText(
-                text: "Hi, my name is",
-                textsize: 16.0,
-                color: const Color(0xff41FBDA),
+                text: 'Hi! My name is ',
+                color: const Color(0xff413CFD),
+                textsize: 20.0,
+                fontWeight: FontWeight.normal,
                 letterSpacing: 3.0,
-                fontWeight: FontWeight.w500,
               ),
               SizedBox(
                 height: size.height * 0.02,
               ),
               CustomText(
-                text: "Tushar Nikam.",
-                textsize: 52.0,
-                color: const Color(0xffCCD6F6),
-                fontWeight: FontWeight.w900,
-                letterSpacing: 3.0,
-              ),
+                  text: "George Stephen W.",
+                  textsize: 60.0,
+                  color: const Color(0xff828DAA),
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 3.0),
               SizedBox(
                 height: size.height * 0.04,
               ),
               CustomText(
-                text: "I build things for the Android and web.",
-                textsize: 42.0,
-                color: const Color(0xffCCD6F6).withOpacity(0.6),
-                fontWeight: FontWeight.w700,
-                letterSpacing: 3.0,
-              ),
+                  text: "I build mobile & Web applications.",
+                  textsize: 50.0,
+                  color: const Color(0xff828DAA).withOpacity(0.6),
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 3.0),
               SizedBox(
                 height: size.height * 0.04,
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Wrap(
                   children: [
                     Text(
-                      "I'm a freelancer based in Nashik, IN specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.",
+                      "I'm a freelancer based in Kikuyu, Kiambu ,specializing in \nbuilding (and occasionally designing) exceptional websites, \nmobile applications, and everything in between.",
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 15.0,
@@ -139,25 +144,26 @@ class _MobileHomeState extends State<MobileHome> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(4.0),
                 ),
-                color: const Color(0xff64FFDA),
+                color: Color(0xff413CFD),
                 child: Container(
                   alignment: Alignment.center,
-                  margin: const EdgeInsets.all(0.75),
+                  margin: EdgeInsets.all(0.75),
                   height: 56.0,
                   width: 160.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4.0),
-                    color: const Color(0xff0A192F),
+                    color: Color(0xff3B394C),
                   ),
                   child: MaterialButton(
                     onPressed: () {
                       method.launchEmail();
                     },
-                    hoverColor: Colors.green,
-                    child: const Text(
+                    hoverColor:
+                    const Color(0xff413CFD).withOpacity(0.2),
+                    child: Text(
                       "Get In Touch",
                       style: TextStyle(
-                        color: Color(0xff64FFDA),
+                        color: Color(0xff413CFD),
                         letterSpacing: 2.75,
                         wordSpacing: 1.0,
                         fontSize: 15.0,
@@ -185,17 +191,17 @@ class _MobileHomeState extends State<MobileHome> {
                           CustomText(
                             text: "01.",
                             textsize: 20.0,
-                            color: const Color(0xff61F9D5),
+                            color: Color(0xff413CFD),
                             fontWeight: FontWeight.w700,
                             letterSpacing: 3.0,
                           ),
-                          const SizedBox(
+                          SizedBox(
                             width: 12.0,
                           ),
                           CustomText(
                             text: "About Me",
                             textsize: 26.0,
-                            color: const Color(0xffCCD6F6),
+                            color: Color(0xffBEBEC0),
                             fontWeight: FontWeight.w700,
                             letterSpacing: 3.0,
                           ),
@@ -205,7 +211,7 @@ class _MobileHomeState extends State<MobileHome> {
                           Container(
                             width: size.width / 4,
                             height: 1.10,
-                            color: const Color(0xff303C55),
+                            color: Color(0xff303C55),
                           ),
                         ],
                       ),
@@ -219,25 +225,26 @@ class _MobileHomeState extends State<MobileHome> {
                         children: [
                           CustomText(
                             text:
-                            "Hello! I'm Tushar, a Freelancer based in Nashik, IN.\nI enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect, performant experiences.\n",
+                            "Hello! I'm George Stephen W, a Freelancer based in Kikuyu, KE.\n\nI enjoy creating things that thrive on the internet, whether that be websites, mobile applications, or anything in between. My goal is to always grow within the field of Software Engineering and build products that provide"
+                                "efficient and perfect solutions.\n\n",
                             textsize: 16.0,
-                            color: const Color(0xff828DAA),
+                            color: Color(0xff828DAA),
                             fontWeight: FontWeight.w500,
                             letterSpacing: 0.75,
                           ),
                           CustomText(
                             text:
-                            "Shortly currently, I am purshuing my Bachlor's degree in Computter science and Engineering at University of Pune, as well as doing freelancing where I work on a wide variety of interesting and meaningful projects on a daily basis.\n",
+                            "Currently, I am pursuing my Bachelor's degree in Informatics and Computer science at Strathmore University, as well as doing freelancing where I work on a wide variety of interesting and meaningful projects on a daily basis.\n\n",
                             textsize: 16.0,
-                            color: const Color(0xff828DAA),
+                            color: Color(0xff828DAA),
                             fontWeight: FontWeight.w500,
                             letterSpacing: 0.75,
                           ),
                           CustomText(
                             text:
-                            "Here are a few technologies I've been working with recently:\n\n",
+                            "Here are a few technologies/ I've been acquired since I started:\n\n",
                             textsize: 16.0,
-                            color: const Color(0xff828DAA),
+                            color: Color(0xff828DAA),
                             fontWeight: FontWeight.w500,
                             letterSpacing: 0.75,
                           ),
@@ -258,20 +265,22 @@ class _MobileHomeState extends State<MobileHome> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                technology(context, "Dart"),
-                                technology(context, "Flutter"),
-                                technology(context, "Firebase"),
-                                technology(context, "UI/UX (Adobe XD)"),
+                                technology(context, "Flutter/Dart"),
+                                technology(context, "UI/UX design"),
+                                technology(context, "Android/Java"),
+                                technology(context, "HTML & CSS"),
+                                technology(context, "Python"),
+                                technology(context, "Git/Github"),
                               ],
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                technology(context, "C/C++"),
-                                technology(context, "HTML, & (S)Css"),
-                                technology(context, "MYSQL"),
-                                technology(context, "Java"),
+                                technology(context, "Communication skills"),
+                                technology(context, "Management skills"),
+                                technology(context, "Adaptive learning"),
+                                technology(context, "Strategic planning"),
                               ],
                             ),
                           ],
@@ -298,409 +307,102 @@ class _MobileHomeState extends State<MobileHome> {
                         right: 20,
                         left: 50.0,
                         child: Card(
-                          color: const Color(0xff61F9D5),
+                          color: Color(0xff413CFD),
                           child: Container(
-                            margin: const EdgeInsets.all(2.75),
+                            margin: EdgeInsets.all(2.75),
                             height: size.height * 0.45,
                             width: size.width * 0.66,
-                            color: const Color(0xff0A192F),
+                            color: Color(0xff3B394C),
                           ),
                         ),
                       ),
                       Container(
-                        height: size.height * 0.5,
-                        width: size.width * 0.6,
+                        height: size.height / 0.5,
+                        width: size.width / 0.6,
+                        color: Color(0xff3B394C),
                         child: const Image(
                           fit: BoxFit.cover,
-                          image: AssetImage("images/pic1.jpeg"),
+                          image: AssetImage("images/me.jpg"),
                         ),
                       ),
                       Container(
                         height: size.height * 0.5,
                         width: size.width * 0.6,
-                        color: const Color(0xff61F9D5).withOpacity(0.5),
+                        color: Color(0xff3B394C).withOpacity(0.5),
                       ),
                     ],
                   ),
                 ),
               ),
 
-              //Where I've Worked title
+              SizedBox(
+                height: size.height * 0.08,
+              ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomText(
                     text: "02.",
                     textsize: 20.0,
-                    color: const Color(0xff61F9D5),
+                    color: Color(0xff413CFD),
                     fontWeight: FontWeight.w700,
-                    letterSpacing: 0.75,
+                    letterSpacing: 3.0,
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 12.0,
                   ),
                   CustomText(
                     text: "Where I've Worked",
-                    textsize: 26.0,
-                    color: const Color(0xffCCD6F6),
+                    textsize: 24.0,
+                    color: Color(0xffCCD6F6),
                     fontWeight: FontWeight.w700,
-                    letterSpacing: 0.75,
+                    letterSpacing: 2.5,
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.01,
+                    width: size.width * 0.01,
                   ),
                   Container(
-                    width: size.width * 0.08,
+                    width: size.width / 4,
                     height: 1.10,
-                    color: const Color(0xff303C55),
+                    color: Color(0xff303C55),
                   ),
                 ],
               ),
-
               MobileWork(),
 
               SizedBox(
-                height: size.height * 0.07,
+                height: size.height * 0.08,
               ),
-
-              //Some Things I've Built title
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomText(
                     text: "03.",
                     textsize: 20.0,
-                    color: const Color(0xff61F9D5),
+                    color: Color(0xff413CFD),
                     fontWeight: FontWeight.w700,
-                    letterSpacing: 0.75,
+                    letterSpacing: 2.0,
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 12.0,
                   ),
                   CustomText(
-                    text: "Some Things I've Built",
-                    textsize: 26.0,
-                    color: const Color(0xffCCD6F6),
+                    text: "Projects I've developed",
+                    textsize: 24.0,
+                    color: Color(0xffCCD6F6),
                     fontWeight: FontWeight.w700,
-                    letterSpacing: 0.75,
+                    letterSpacing: 2.5,
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.01,
+                    width: size.width * 0.01,
                   ),
                   Container(
-                    width: size.width * 0.04,
+                    width: size.width / 4,
                     height: 1.10,
-                    color: const Color(0xff303C55),
+                    color: Color(0xff303C55),
                   ),
                 ],
               ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic9.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic2.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic3.png",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic4.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic5.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic6.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic7.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic8.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic10.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic11.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic102.gif",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic104.png",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic105.png",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic106.png",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic107.jfif",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic108.jfif",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic109.jfif",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic110.jfif",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              Row(
-                children: [
-                  Container(
-                    width: size.width * 0.42,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic101.png"),
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    width: size.width * 0.42,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic103.png"),
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              Row(
-                children: [
-                  Container(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic111.gif"),
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic113.jfif"),
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              Row(
-                children: [
-                  Container(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic114.png"),
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic115.png"),
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              Row(
-                children: [
-                  Container(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic116.jfif"),
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic117.png"),
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              Row(
-                children: [
-                  Container(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic118.jpeg"),
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic119.jpeg"),
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              Row(
-                children: [
-                  Container(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic120.png"),
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic121.png"),
-                    ),
-                  ),
-                ],
-              ),
-
               SizedBox(
                 height: size.height * 0.07,
               ),
@@ -708,150 +410,137 @@ class _MobileHomeState extends State<MobileHome> {
               FittedBox(
                 fit: BoxFit.cover,
                 child: Container(
-                  //height: size.aspectRatio,
                   width: size.width,
                   alignment: Alignment.center,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomText(
-                        text: "0.4 What's Next?",
-                        textsize: 16.0,
-                        color: const Color(0xff41FBDA),
-                        letterSpacing: 3.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      const SizedBox(
-                        height: 16.0,
-                      ),
-                      CustomText(
-                        text: "Get In Touch",
-                        textsize: 42.0,
-                        color: Colors.white,
-                        letterSpacing: 3.0,
-                        fontWeight: FontWeight.w700,
-                      ),
-                      SizedBox(
-                        height: size.height * 0.04,
-                      ),
-                      Wrap(
-                        alignment: WrapAlignment.center,
-                        children: [
-                          Text(
-                            "Although I'm currently looking for SDE-1 opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white.withOpacity(0.4),
-                              letterSpacing: 0.75,
-                              fontSize: 16.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: size.height * 0.07,
-                      ),
-                      Card(
-                        elevation: 4.0,
-                        color: const Color(0xff64FFDA),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6.0),
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomText(
+                            text: "04. What's next",
+                            textsize: 16.0,
+                            color: const Color(0xff413CFD),
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 3.0),
+                        SizedBox(
+                          height: 16.0,
                         ),
-                        child: Container(
-                          margin: const EdgeInsets.all(0.85),
-                          height: size.height * 0.10,
-                          width: size.width * 0.30,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: const Color(0xff0A192F),
-                            borderRadius: BorderRadius.circular(6.0),
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 8.0,
-                            ),
-                            child: Text(
-                              "Say Hello",
+                        CustomText(
+                            text: "Get in Touch",
+                            textsize: 42.0,
+                            color: const Color(0xffBAD0D0),
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 3.0),
+                        Wrap(
+                          children: [
+                            Text(
+                              "While I am currently looking for software developement opportunities, My inbox is \nalways open."
+                                  "Whether you have a question or just want to connect, I'll do my \nbest to get back to you.",
+                              textAlign: TextAlign.center,
                               style: TextStyle(
-                                color: Color(0xff64FFDA),
+                                color: const Color(0xffBAD0D0).withOpacity(0.4),
+                                letterSpacing: 0.75,
+                                fontSize: 17.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 32.0,
+                        ),
+                        InkWell(
+                          onTap: (){
+                            method.launchEmail();
+                          },
+                          child: Card(
+                            elevation: 4.0,
+                            color: const Color(0xff413CFD),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(6.0)
+                            ),
+                            child: Container(
+                              margin: const EdgeInsets.all(0.85),
+                              height: size.height * 0.07,
+                              width: size.width * 0.20,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                  color: Color(0xff3B394C),
+                                  borderRadius: BorderRadius.circular(6.0)
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Text(
+                                  "Say hello",
+                                  style: TextStyle(
+                                    color: Color(0xffBAD0D0),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ]
                   ),
                 ),
               ),
-
               SizedBox(
                 height: size.height * 0.07,
               ),
-
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
-                    icon: const Icon(
-                      FontAwesomeIcons.github,
-                      color: Colors.white,
-                      size: 15.0,
-                    ),
-                    onPressed: () {
-                      method.launchURL("https://github.com/champ96k");
+                    onPressed: (){
+                      method.launchURL("https://github.com/George-Stephen");
                     },
+                    icon: FaIcon(FontAwesomeIcons.github),
+                    color: Color(0xffBAD0D0),
+                    iconSize: 18.0,
                   ),
                   IconButton(
-                    icon: const Icon(
-                      FontAwesomeIcons.linkedin,
-                      color: Colors.white,
-                      size: 15.0,
-                    ),
-                    onPressed: () {
-                      method.launchURL(
-                          "https://www.linkedin.com/in/tushar-nikam-a29a97131/");
+                    onPressed: (){
+                      method.launchURL("https://www.instagram.com/george_steph05/");
                     },
+                    icon: FaIcon(FontAwesomeIcons.instagram),
+                    color: Color(0xffBAD0D0),
+                    iconSize: 18.0,
                   ),
                   IconButton(
-                    icon: const Icon(
-                      FontAwesomeIcons.twitter,
-                      color: Colors.white,
-                      size: 15.0,
-                    ),
-                    onPressed: () {
-                      method.launchURL("https://twitter.com/champ_96k");
+                    onPressed: (){
+                      method.launchURL("https://www.linkedin.com/in/george-stephen-wangui/");
                     },
+                    icon: FaIcon(FontAwesomeIcons.linkedin),
+                    color: Color(0xffBAD0D0),
+                    iconSize: 18.0,
                   ),
                   IconButton(
-                    icon: const Icon(
-                      Icons.mail,
-                      color: Colors.white,
-                      size: 15.0,
-                    ),
-                    onPressed: () {
+                    onPressed: (){
+                      method.launchCaller();
+                    },
+                    icon: FaIcon(Icons.call),
+                    color: Color(0xffBAD0D0),
+                    iconSize: 18.0,
+                  ),
+                  IconButton(
+                    onPressed: (){
                       method.launchEmail();
                     },
-                  )
+                    icon: FaIcon(Icons.mail),
+                    color: Color(0xffBAD0D0),
+                    iconSize: 18.0,
+                  ),
                 ],
               ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              //Footer
               Container(
                 alignment: Alignment.center,
-                height: MediaQuery.of(context).size.height / 6,
+                height: MediaQuery.of(context).size.height /6,
                 width: MediaQuery.of(context).size.width,
-                //color: Colors.white,
                 child: Text(
-                  "Designed & Built by Tushar Nikam 💙 Flutter",
+                  "Designed and built by George Stephen W.",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.4),
-                    letterSpacing: 1.75,
-                    fontSize: 14.0,
+                      color: Color(0xffBAD0D0).withOpacity(0.4),
+                      letterSpacing: 1.75,
+                      fontSize: 14.0
                   ),
                 ),
               ),

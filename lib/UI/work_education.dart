@@ -25,7 +25,7 @@ class _WorkState extends State<WorkEducation> {
               CustomText(
                 text: "02.",
                 textsize: 20.0,
-                color: Color(0xff61F9D5),
+                color: Color(0xff413CFD),
                 fontWeight: FontWeight.w700,
                 letterSpacing: 3.0,
               ),
@@ -63,7 +63,7 @@ class _WorkState extends State<WorkEducation> {
                       children: [
                         Center(
                           child: VerticalDivider(
-                            color: Color(0xff64FFDA),
+                            color: Color(0xff413CFD),
                             thickness: 1.75,
                             width: 10,
                             indent: 10,
@@ -85,14 +85,15 @@ class _WorkState extends State<WorkEducation> {
                                     child: FaIcon(FontAwesomeIcons.freeCodeCamp,
                                         color: Colors.white),
                                   ),
+
                                   CircleAvatar(
                                     backgroundColor: Color(0xff727074),
-                                    child: FaIcon(FontAwesomeIcons.laptopCode,
+                                    child: FaIcon(FontAwesomeIcons.coffee,
                                         color: Colors.white),
                                   ),
                                   CircleAvatar(
                                     backgroundColor: Color(0xff727074),
-                                    child: FaIcon(FontAwesomeIcons.coffee,
+                                    child: FaIcon(FontAwesomeIcons.laptopCode,
                                         color: Colors.white),
                                   ),
                                   CircleAvatar(

@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/UI/work_education.dart';
 import 'package:my_portfolio/Widget/app_bar.dart';
 import 'package:my_portfolio/Widget/custom_text.dart';
+import 'package:my_portfolio/Widget/main_title.dart';
 import 'package:my_portfolio/models/contact_methods.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
@@ -329,6 +330,116 @@ class _homeState extends State<HomePage>{
                                       height: size.height * 0.02,
                                     ),
                                     _wrapScrolling(0, WorkEducation()),
+                                    SizedBox(
+                                      height: size.height * 0.10,
+                                    ),
+                                    _wrapScrolling(2,
+                                         Column(
+                                          children: [
+                                            const MainTitle(
+                                              number: "03. ",
+                                              text: "Projects I've worked on",
+                                            ),
+                                            SizedBox(
+                                              height: size.height * 0.04,
+                                            ),
+                                            SizedBox(
+                                              height: 6.0,
+                                            ),
+                                            _wrapScrolling(3,
+                                              Column(
+                                               children: [
+                                                 Container(
+                                                   height: size.height * 0.68,
+                                                   width: MediaQuery.of(context).size.width -100,
+                                                   child: Column(
+                                                     mainAxisAlignment: MainAxisAlignment.center,
+                                                     children: [
+                                                       CustomText(
+                                                           text: "04. What's next",
+                                                           textsize: 16.0,
+                                                           color: const Color(0xff413CFD),
+                                                           fontWeight: FontWeight.w500,
+                                                           letterSpacing: 3.0),
+                                                       SizedBox(
+                                                         height: 16.0,
+                                                       ),
+                                                       CustomText(
+                                                           text: "Get in Touch",
+                                                           textsize: 42.0,
+                                                           color: const Color(0xffBAD0D0),
+                                                           fontWeight: FontWeight.w700,
+                                                           letterSpacing: 3.0),
+                                                       Wrap(
+                                                         children: [
+                                                           Text(
+                                                               "While I am currently looking for software developement opportunities, My inbox is \nalways open."
+                                                                   "Whether you have a question or just want to connect, I'll do my \nbest to get back to you.",
+                                                             textAlign: TextAlign.center,
+                                                             style: TextStyle(
+                                                               color: const Color(0xffBAD0D0).withOpacity(0.4),
+                                                               letterSpacing: 0.75,
+                                                               fontSize: 17.0,
+                                                             ),
+                                                           ),
+                                                         ],
+                                                       ),
+                                                       SizedBox(
+                                                         height: 32.0,
+                                                       ),
+                                                       InkWell(
+                                                         onTap: (){
+                                                           method.launchEmail();
+                                                         },
+                                                         child: Card(
+                                                           elevation: 4.0,
+                                                           color: const Color(0xff413CFD),
+                                                           shape: RoundedRectangleBorder(
+                                                               borderRadius: BorderRadius.circular(6.0)
+                                                           ),
+                                                           child: Container(
+                                                             margin: const EdgeInsets.all(0.85),
+                                                             height: size.height * 0.07,
+                                                             width: size.width * 0.20,
+                                                             alignment: Alignment.center,
+                                                             decoration: BoxDecoration(
+                                                                 color: Color(0xff3B394C),
+                                                                 borderRadius: BorderRadius.circular(6.0)
+                                                             ),
+                                                               child: const Padding(
+                                                                 padding: EdgeInsets.symmetric(horizontal: 8.0),
+                                                                 child: Text(
+                                                                   "Say hello",
+                                                                   style: TextStyle(
+                                                                     color: Color(0xffBAD0D0),
+                                                                   ),
+                                                                 ),
+                                                               ),
+                                                             ),
+                                                           ),
+                                                         ),
+                                                     ],
+                                                   ),
+                                                 ),
+                                                 Container(
+                                                   alignment: Alignment.center,
+                                                   height: MediaQuery.of(context).size.height /6,
+                                                   width: MediaQuery.of(context).size.width -100,
+                                                   child: Text(
+                                                     "Designed and built by George Stephen W.",
+                                                     style: TextStyle(
+                                                       color: Color(0xffBAD0D0).withOpacity(0.4),
+                                                       letterSpacing: 1.75,
+                                                       fontSize: 14.0
+                                                     ),
+                                                   ),
+                                                 ),
+                                               ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                    )
                                   ]
                                 ),
                             ),
@@ -336,6 +447,34 @@ class _homeState extends State<HomePage>{
                         ),
                       ),
                     ),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.07,
+                  height: MediaQuery.of(context).size.height -82,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      RotatedBox(
+                          quarterTurns: 45,
+                          child: Text(
+                            "georgesteve561@gmail.com",
+                            style: TextStyle(
+                              color: Color(0xffBAD0D0).withOpacity(0.6),
+                              letterSpacing: 3.0,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                      ),
+                      Padding(
+                          padding: const EdgeInsets.only(top: 16.0),
+                          child: Container(
+                            height: 100,
+                            width: 2,
+                            color: Color(0xffBAD0D0).withOpacity(0.6),
+                          ),
+                      )
+                    ],
+                  ),
                 ),
               ],
             )
