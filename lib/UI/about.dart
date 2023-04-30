@@ -114,16 +114,14 @@ class About extends StatelessWidget {
                   child: Wrap(
                     children: [
                       SizedBox(
-                        width: size.width * 0.1,
+                        width: size.width * 0.25,
                         height: size.height * 0.15,
                         child: Column(
                           children: [
                             technology(context, "Flutter/Dart"),
                             technology(context, "UI/UX design"),
                             technology(context, "Android/Java"),
-                            technology(context, "HTML & CSS"),
-                            technology(context, "Python"),
-                            technology(context, "Git/Github"),
+                            technology(context, "Adaptive learning"),
                           ],
                         ),
                       ),
@@ -132,10 +130,10 @@ class About extends StatelessWidget {
                         height: size.height * 0.15,
                         child: Column(
                           children: [
-                            technology(context, "Communication skills"),
-                            technology(context, "Management skills"),
-                            technology(context, "Adaptive learning"),
-                            technology(context, "Strategic planning"),
+                            technology(context, "HTML & CSS"),
+                            technology(context, "Python"),
+                            technology(context, "Git/Github"),
+                            technology(context, "CI/CD"),
                           ],
                         ),
                       )
