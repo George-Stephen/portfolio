@@ -229,10 +229,7 @@ class _CustomImageAnimationState extends State<CustomImageAnimation> {
             height: size.height / 2,
             width: size.width / 5,
             color: Color(0xff3B394C),
-            child: const Image(
-              fit: BoxFit.cover,
-              image: AssetImage("./Assets/images/me.jpg"),
-            ),
+            child: Image.network("https://i.postimg.cc/xTGq0QHc/me.jpg"),
           ),
           Container(
             height: size.height / 2,
